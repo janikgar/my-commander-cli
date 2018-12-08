@@ -7,10 +7,14 @@ program
   .option('-w, --week', 'Get this week\s weather')
   .parse(process.argv)
 
-console.log(chalk.blue('You\'ve asked for the weather for:'))
-if (program.today) {
-  console.log(chalk.yellowBright(" - Today"));
-}
-if (program.week) {
-  console.log(chalk.green(" - This week"));
+if (program.args.length != 0) {
+  console.log(chalk.blue('You\'ve asked for the weather for:'))
+  if (program.today) {
+    console.log(chalk.yellowBright(" - Today"));
+  }
+  if (program.week) {
+    console.log(chalk.green(" - This week"));
+  }
+} else {
+  program.help();
 }
