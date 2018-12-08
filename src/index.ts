@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import * as program from 'commander';
 import chalk from 'chalk';
 
@@ -7,14 +9,12 @@ program
   .option('-w, --week', 'Get this week\s weather')
   .parse(process.argv)
 
-if (program.args.length != 0) {
+if (program.today) {
   console.log(chalk.blue('You\'ve asked for the weather for:'))
-  if (program.today) {
-    console.log(chalk.yellowBright(" - Today"));
-  }
-  if (program.week) {
-    console.log(chalk.green(" - This week"));
-  }
-} else {
-  program.help();
+  console.log(" - Today");
 }
+if (program.week) {
+  console.log(chalk.blue('You\'ve asked for the weather for:'))
+  console.log(" - This week");
+}
+  

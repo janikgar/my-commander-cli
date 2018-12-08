@@ -5,10 +5,16 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "run": "tsc && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "tsc && node dist/index.js"
   },
-  "author": "",
+  "author": "J. Garcia",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janikgar/my-commander-cli"
+  },
+  "bin": {
+    "my-cli": "./dist/index.js"
+  },
   "license": "MIT",
   "dependencies": {
     "@types/node": "^10.12.12",
